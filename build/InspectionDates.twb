@@ -1,0 +1,1550 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20192.19.0718.1543                               -->
+<workbook original-version='18.1' source-build='2019.2.2 (20192.19.0718.1543)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Average Time to Appointment' datatype='real' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='104.0'>
+        <calculation class='tableau' formula='104.0' />
+      </column>
+    </datasource>
+    <datasource caption='SeattlePermitScheduler' inline='true' name='federated.05y82bk0su21p20zt8fgu04lem2s' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='SeattlePermitScheduler' name='textscan.0a6vmoo1qnbdw616btf3j1jsxgpq'>
+            <connection class='textscan' directory='C:/Users/austi/Dropbox (ACH)/Intern Projects/Seattle Permit Scheduler' filename='SeattlePermitScheduler.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0a6vmoo1qnbdw616btf3j1jsxgpq' name='SeattlePermitScheduler.csv' table='[SeattlePermitScheduler#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='Attempt' ordinal='0' />
+            <column datatype='string' name='PermitURL' ordinal='1' />
+            <column datatype='datetime' name='CurrentTime' ordinal='2' />
+            <column datatype='boolean' name='WithinRange' ordinal='3' />
+            <column datatype='date' name='CurrentScheduledDay' ordinal='4' />
+            <column datatype='date' name='EarliestAllowableDay' ordinal='5' />
+            <column datatype='date' name='NextAvailableDay' ordinal='6' />
+            <column datatype='date' name='SecondAvailableDay' ordinal='7' />
+            <column datatype='date' name='ThirdAvailableDay' ordinal='8' />
+            <column datatype='date' name='FourthAvailableDay' ordinal='9' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[SeattlePermitScheduler.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Attempt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Attempt]</local-name>
+            <parent-name>[SeattlePermitScheduler.csv]</parent-name>
+            <remote-alias>Attempt</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PermitURL</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PermitURL]</local-name>
+            <parent-name>[SeattlePermitScheduler.csv]</parent-name>
+            <remote-alias>PermitURL</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CurrentTime</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[CurrentTime]</local-name>
+            <parent-name>[SeattlePermitScheduler.csv]</parent-name>
+            <remote-alias>CurrentTime</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WithinRange</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[WithinRange]</local-name>
+            <parent-name>[SeattlePermitScheduler.csv]</parent-name>
+            <remote-alias>WithinRange</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CurrentScheduledDay</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[CurrentScheduledDay]</local-name>
+            <parent-name>[SeattlePermitScheduler.csv]</parent-name>
+            <remote-alias>CurrentScheduledDay</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EarliestAllowableDay</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[EarliestAllowableDay]</local-name>
+            <parent-name>[SeattlePermitScheduler.csv]</parent-name>
+            <remote-alias>EarliestAllowableDay</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NextAvailableDay</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[NextAvailableDay]</local-name>
+            <parent-name>[SeattlePermitScheduler.csv]</parent-name>
+            <remote-alias>NextAvailableDay</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SecondAvailableDay</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[SecondAvailableDay]</local-name>
+            <parent-name>[SeattlePermitScheduler.csv]</parent-name>
+            <remote-alias>SecondAvailableDay</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ThirdAvailableDay</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[ThirdAvailableDay]</local-name>
+            <parent-name>[SeattlePermitScheduler.csv]</parent-name>
+            <remote-alias>ThirdAvailableDay</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FourthAvailableDay</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[FourthAvailableDay]</local-name>
+            <parent-name>[SeattlePermitScheduler.csv]</parent-name>
+            <remote-alias>FourthAvailableDay</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Difference From Current to 1st' datatype='integer' name='[Calculation_1921066725523615744]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF DATEDIFF(&apos;day&apos;,[CurrentTime], [NextAvailableDay])&gt; 1 THEN DATEDIFF(&apos;day&apos;,[CurrentTime], [NextAvailableDay]) ELSE NULL END' />
+      </column>
+      <column caption='Distance From 1st to 4th' datatype='integer' name='[Calculation_195343643579908096]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,[NextAvailableDay], [FourthAvailableDay])' />
+      </column>
+      <column caption='Distance to Next Allowable Date' datatype='integer' name='[Calculation_195343643580661761]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF DATEDIFF(&apos;day&apos;,[CurrentTime],[NextAvailableDay])&gt;0 THEN DATEDIFF(&apos;day&apos;,[CurrentTime],[NextAvailableDay])ELSEIF   DATEDIFF(&apos;day&apos;,[CurrentTime],[SecondAvailableDay])&gt;0 THEN DATEDIFF(&apos;day&apos;,[CurrentTime], [SecondAvailableDay])ELSEIF   DATEDIFF(&apos;day&apos;,[CurrentTime],[ThirdAvailableDay])&gt;0 THEN DATEDIFF(&apos;day&apos;,[CurrentTime],[ThirdAvailableDay]) ELSEIF   DATEDIFF(&apos;day&apos;,[CurrentTime],[FourthAvailableDay])&gt;0 THEN DATEDIFF(&apos;day&apos;,[CurrentTime]&#13;&#10;,[FourthAvailableDay])ELSE NULL END' />
+      </column>
+      <column caption='Distance To Current Day' datatype='integer' name='[Calculation_195343643593953283]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,[Distance to Next Allowable Date (copy)],[CurrentScheduledDay])+[Calculation_195343643580661761]' />
+      </column>
+      <column caption='True if Difference 1 or Less Days' datatype='boolean' name='[Calculation_195343643662516231]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Calculation_1921066725523615744] &lt;2 OR [Difference From Current to 1st (copy)] &lt;2 OR [Difference From Current to 2nd (copy)]&lt;2 OR [Difference From Current to 3rd (copy)]&lt;2 THEN TRUE ELSE FALSE END' />
+      </column>
+      <column caption='Current Scheduled Day' datatype='date' name='[CurrentScheduledDay]' role='dimension' type='ordinal' />
+      <column caption='Current Time' datatype='datetime' name='[CurrentTime]' role='dimension' type='ordinal' />
+      <column caption='Difference From Current to 2nd' datatype='integer' name='[Difference From Current to 1st (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,[CurrentTime], [SecondAvailableDay])' />
+      </column>
+      <column caption='Difference From Current to 3rd' datatype='integer' name='[Difference From Current to 2nd (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,[CurrentTime], [ThirdAvailableDay])' />
+      </column>
+      <column caption='Difference From Current to 4th' datatype='integer' name='[Difference From Current to 3rd (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,[CurrentTime], [FourthAvailableDay])' />
+      </column>
+      <column caption='Next Allowable Date' datatype='date' name='[Distance to Next Allowable Date (copy)]' role='dimension' type='quantitative'>
+        <calculation class='tableau' formula='IF DATEDIFF(&apos;day&apos;,[EarliestAllowableDay],[NextAvailableDay])&gt;0 THEN [NextAvailableDay] ELSEIF    DATEDIFF(&apos;day&apos;,[EarliestAllowableDay],[SecondAvailableDay])&gt;0 THEN [SecondAvailableDay] ELSEIF   DATEDIFF(&apos;day&apos;,[EarliestAllowableDay],[ThirdAvailableDay])&gt;0 THEN [ThirdAvailableDay] ELSEIF   DATEDIFF(&apos;day&apos;,[EarliestAllowableDay],[FourthAvailableDay])&gt;0 THEN [FourthAvailableDay] ELSE NULL END' />
+      </column>
+      <column caption='Earliest Allowable Day' datatype='date' name='[EarliestAllowableDay]' role='dimension' type='ordinal' />
+      <column caption='Fourth Available Day' datatype='date' name='[FourthAvailableDay]' role='dimension' type='ordinal' />
+      <column caption='Next Available Day' datatype='date' name='[NextAvailableDay]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Permit URL' datatype='string' name='[PermitURL]' role='dimension' type='nominal' />
+      <column caption='Second Available Day' datatype='date' name='[SecondAvailableDay]' role='dimension' type='ordinal' />
+      <column caption='Third Available Day' datatype='date' name='[ThirdAvailableDay]' role='dimension' type='ordinal' />
+      <column caption='Within Range' datatype='boolean' name='[WithinRange]' role='dimension' type='nominal' />
+      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.49569' measure-ordering='alphabetic' measure-percentage='0.41954' parameter-percentage='0.0847701' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <default-sorts>
+        <manual-sort column='[none:Forecast Indicator:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Actual&quot;</bucket>
+            <bucket>&quot;Estimate&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Frequency of Next Allowable Date'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SeattlePermitScheduler' name='federated.05y82bk0su21p20zt8fgu04lem2s' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05y82bk0su21p20zt8fgu04lem2s'>
+            <column caption='Difference From Current to 1st' datatype='integer' name='[Calculation_1921066725523615744]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF DATEDIFF(&apos;day&apos;,[CurrentTime], [NextAvailableDay])&gt; 1 THEN DATEDIFF(&apos;day&apos;,[CurrentTime], [NextAvailableDay]) ELSE NULL END' />
+            </column>
+            <column caption='Distance to Next Allowable Date' datatype='integer' name='[Calculation_195343643580661761]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF DATEDIFF(&apos;day&apos;,[CurrentTime],[NextAvailableDay])&gt;0 THEN DATEDIFF(&apos;day&apos;,[CurrentTime],[NextAvailableDay])ELSEIF   DATEDIFF(&apos;day&apos;,[CurrentTime],[SecondAvailableDay])&gt;0 THEN DATEDIFF(&apos;day&apos;,[CurrentTime], [SecondAvailableDay])ELSEIF   DATEDIFF(&apos;day&apos;,[CurrentTime],[ThirdAvailableDay])&gt;0 THEN DATEDIFF(&apos;day&apos;,[CurrentTime],[ThirdAvailableDay]) ELSEIF   DATEDIFF(&apos;day&apos;,[CurrentTime],[FourthAvailableDay])&gt;0 THEN DATEDIFF(&apos;day&apos;,[CurrentTime]&#13;&#10;,[FourthAvailableDay])ELSE NULL END' />
+            </column>
+            <column caption='Distance To Current Day' datatype='integer' name='[Calculation_195343643593953283]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,[Distance to Next Allowable Date (copy)],[CurrentScheduledDay])+[Calculation_195343643580661761]' />
+            </column>
+            <column caption='Current Scheduled Day' datatype='date' name='[CurrentScheduledDay]' role='dimension' type='ordinal' />
+            <column caption='Current Time' datatype='datetime' name='[CurrentTime]' role='dimension' type='ordinal' />
+            <column caption='Next Allowable Date' datatype='date' name='[Distance to Next Allowable Date (copy)]' role='dimension' type='quantitative'>
+              <calculation class='tableau' formula='IF DATEDIFF(&apos;day&apos;,[EarliestAllowableDay],[NextAvailableDay])&gt;0 THEN [NextAvailableDay] ELSEIF    DATEDIFF(&apos;day&apos;,[EarliestAllowableDay],[SecondAvailableDay])&gt;0 THEN [SecondAvailableDay] ELSEIF   DATEDIFF(&apos;day&apos;,[EarliestAllowableDay],[ThirdAvailableDay])&gt;0 THEN [ThirdAvailableDay] ELSEIF   DATEDIFF(&apos;day&apos;,[EarliestAllowableDay],[FourthAvailableDay])&gt;0 THEN [FourthAvailableDay] ELSE NULL END' />
+            </column>
+            <column caption='Earliest Allowable Day' datatype='date' name='[EarliestAllowableDay]' role='dimension' type='ordinal' />
+            <column caption='Fourth Available Day' datatype='date' name='[FourthAvailableDay]' role='dimension' type='ordinal' />
+            <column caption='Next Available Day' datatype='date' name='[NextAvailableDay]' role='dimension' type='ordinal' />
+            <column caption='Second Available Day' datatype='date' name='[SecondAvailableDay]' role='dimension' type='ordinal' />
+            <column caption='Third Available Day' datatype='date' name='[ThirdAvailableDay]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_195343643580661761]' derivation='Attribute' name='[attr:Calculation_195343643580661761:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CurrentScheduledDay]' derivation='Attribute' name='[attr:CurrentScheduledDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Distance to Next Allowable Date (copy)]' derivation='Attribute' name='[attr:Distance to Next Allowable Date (copy):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[EarliestAllowableDay]' derivation='Attribute' name='[attr:EarliestAllowableDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_195343643593953283]' derivation='Avg' name='[avg:Calculation_195343643593953283:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_195343643580661761]' derivation='None' name='[none:Calculation_195343643580661761:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CurrentTime]' derivation='None' name='[none:CurrentTime:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1921066725523615744]' derivation='Sum' name='[sum:Calculation_1921066725523615744:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CurrentTime]' derivation='Minute-Trunc' name='[tmi:CurrentTime:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:Calculation_195343643580661761:qk]' included-values='in-range'>
+            <min>2</min>
+          </filter>
+          <filter class='quantitative' column='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentTime:qk]' included-values='in-range'>
+            <min>#2019-07-08 10:41:00#</min>
+            <max>#2019-08-28 12:30:00#</max>
+          </filter>
+          <slices>
+            <column>[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:Calculation_195343643580661761:qk]</column>
+            <column>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentTime:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#fefaf1' />
+            <format attr='line-visibility' id='refline0' value='on' />
+            <format attr='line-pattern-only' id='refline0' value='dashed' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <tooltip column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:EarliestAllowableDay:ok]' />
+              <tooltip column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:Distance to Next Allowable Date (copy):qk]' />
+              <tooltip column='[federated.05y82bk0su21p20zt8fgu04lem2s].[avg:Calculation_195343643593953283:qk]' />
+              <tooltip column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:CurrentScheduledDay:ok]' />
+              <tooltip column='[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Calculation_1921066725523615744:qk]' />
+            </encodings>
+            <reference-line axis-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643580661761:qk]' enable-instant-analytics='true' formula='median' id='refline0' label='Average Time to Permit Appointment  ' label-type='custom' paired-distribution-id='refline1' probability='95' scope='per-table' value-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643580661761:qk]' z-order='1' />
+            <reference-line axis-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643580661761:qk]' enable-instant-analytics='true' fill-above='false' fill-below='false' formula='medianconfidence' id='refline1' label='' label-type='custom' paired-distribution-id='refline0' probability='95' scope='per-table' show-lines='both' symmetric='false' value-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643580661761:qk]' z-order='2' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.91045933961868286' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643580661761:qk]</rows>
+        <cols>[federated.05y82bk0su21p20zt8fgu04lem2s].[tmi:CurrentTime:qk]</cols>
+      </table>
+      <simple-id uuid='{25A65770-D8BB-4D9F-8F81-390229BF4C05}' />
+    </worksheet>
+    <worksheet name='Frequency of Next Allowable Date (2)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SeattlePermitScheduler' name='federated.05y82bk0su21p20zt8fgu04lem2s' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05y82bk0su21p20zt8fgu04lem2s'>
+            <column caption='Difference From Current to 1st' datatype='integer' name='[Calculation_1921066725523615744]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF DATEDIFF(&apos;day&apos;,[CurrentTime], [NextAvailableDay])&gt; 1 THEN DATEDIFF(&apos;day&apos;,[CurrentTime], [NextAvailableDay]) ELSE NULL END' />
+            </column>
+            <column caption='Distance to Next Allowable Date' datatype='integer' name='[Calculation_195343643580661761]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF DATEDIFF(&apos;day&apos;,[CurrentTime],[NextAvailableDay])&gt;0 THEN DATEDIFF(&apos;day&apos;,[CurrentTime],[NextAvailableDay])ELSEIF   DATEDIFF(&apos;day&apos;,[CurrentTime],[SecondAvailableDay])&gt;0 THEN DATEDIFF(&apos;day&apos;,[CurrentTime], [SecondAvailableDay])ELSEIF   DATEDIFF(&apos;day&apos;,[CurrentTime],[ThirdAvailableDay])&gt;0 THEN DATEDIFF(&apos;day&apos;,[CurrentTime],[ThirdAvailableDay]) ELSEIF   DATEDIFF(&apos;day&apos;,[CurrentTime],[FourthAvailableDay])&gt;0 THEN DATEDIFF(&apos;day&apos;,[CurrentTime]&#13;&#10;,[FourthAvailableDay])ELSE NULL END' />
+            </column>
+            <column caption='Distance To Current Day' datatype='integer' name='[Calculation_195343643593953283]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,[Distance to Next Allowable Date (copy)],[CurrentScheduledDay])+[Calculation_195343643580661761]' />
+            </column>
+            <column caption='Current Scheduled Day' datatype='date' name='[CurrentScheduledDay]' role='dimension' type='ordinal' />
+            <column caption='Current Time' datatype='datetime' name='[CurrentTime]' role='dimension' type='ordinal' />
+            <column caption='Next Allowable Date' datatype='date' name='[Distance to Next Allowable Date (copy)]' role='dimension' type='quantitative'>
+              <calculation class='tableau' formula='IF DATEDIFF(&apos;day&apos;,[EarliestAllowableDay],[NextAvailableDay])&gt;0 THEN [NextAvailableDay] ELSEIF    DATEDIFF(&apos;day&apos;,[EarliestAllowableDay],[SecondAvailableDay])&gt;0 THEN [SecondAvailableDay] ELSEIF   DATEDIFF(&apos;day&apos;,[EarliestAllowableDay],[ThirdAvailableDay])&gt;0 THEN [ThirdAvailableDay] ELSEIF   DATEDIFF(&apos;day&apos;,[EarliestAllowableDay],[FourthAvailableDay])&gt;0 THEN [FourthAvailableDay] ELSE NULL END' />
+            </column>
+            <column caption='Earliest Allowable Day' datatype='date' name='[EarliestAllowableDay]' role='dimension' type='ordinal' />
+            <column caption='Fourth Available Day' datatype='date' name='[FourthAvailableDay]' role='dimension' type='ordinal' />
+            <column caption='Next Available Day' datatype='date' name='[NextAvailableDay]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='Second Available Day' datatype='date' name='[SecondAvailableDay]' role='dimension' type='ordinal' />
+            <column caption='Third Available Day' datatype='date' name='[ThirdAvailableDay]' role='dimension' type='ordinal' />
+            <column-instance column='[CurrentScheduledDay]' derivation='Attribute' name='[attr:CurrentScheduledDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Distance to Next Allowable Date (copy)]' derivation='Attribute' name='[attr:Distance to Next Allowable Date (copy):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[EarliestAllowableDay]' derivation='Attribute' name='[attr:EarliestAllowableDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_195343643593953283]' derivation='Avg' name='[avg:Calculation_195343643593953283:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_195343643580661761]' derivation='None' name='[none:Calculation_195343643580661761:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_195343643580661761]' derivation='None' name='[none:Calculation_195343643580661761:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1921066725523615744]' derivation='Sum' name='[sum:Calculation_1921066725523615744:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643580661761:ok]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Calculation_195343643580661761:ok]' />
+              <groupfilter function='member' level='[none:Calculation_195343643580661761:ok]' member='1' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643580661761:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#fefaf1' />
+            <format attr='line-visibility' id='refline0' value='on' />
+            <format attr='line-pattern-only' id='refline0' value='dashed' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:CurrentScheduledDay:ok]' />
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:Distance to Next Allowable Date (copy):qk]' />
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:EarliestAllowableDay:ok]' />
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[avg:Calculation_195343643593953283:qk]' />
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Calculation_1921066725523615744:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Number of Records:qk]</rows>
+        <cols>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643580661761:qk]</cols>
+      </table>
+      <simple-id uuid='{27448E41-66A3-4376-AD8A-473DC77435CC}' />
+    </worksheet>
+    <worksheet name='U Shaped Phenomena of Permit Frequency'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SeattlePermitScheduler' name='federated.05y82bk0su21p20zt8fgu04lem2s' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Average Time to Appointment' datatype='real' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='104.0'>
+              <calculation class='tableau' formula='104.0' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.05y82bk0su21p20zt8fgu04lem2s'>
+            <column caption='Difference From Current to 1st' datatype='integer' name='[Calculation_1921066725523615744]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF DATEDIFF(&apos;day&apos;,[CurrentTime], [NextAvailableDay])&gt; 1 THEN DATEDIFF(&apos;day&apos;,[CurrentTime], [NextAvailableDay]) ELSE NULL END' />
+            </column>
+            <column caption='True if Difference 1 or Less Days' datatype='boolean' name='[Calculation_195343643662516231]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_1921066725523615744] &lt;2 OR [Difference From Current to 1st (copy)] &lt;2 OR [Difference From Current to 2nd (copy)]&lt;2 OR [Difference From Current to 3rd (copy)]&lt;2 THEN TRUE ELSE FALSE END' />
+            </column>
+            <column caption='Current Time' datatype='datetime' name='[CurrentTime]' role='dimension' type='ordinal' />
+            <column caption='Difference From Current to 2nd' datatype='integer' name='[Difference From Current to 1st (copy)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,[CurrentTime], [SecondAvailableDay])' />
+            </column>
+            <column caption='Difference From Current to 3rd' datatype='integer' name='[Difference From Current to 2nd (copy)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,[CurrentTime], [ThirdAvailableDay])' />
+            </column>
+            <column caption='Difference From Current to 4th' datatype='integer' name='[Difference From Current to 3rd (copy)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,[CurrentTime], [FourthAvailableDay])' />
+            </column>
+            <column caption='Earliest Allowable Day' datatype='date' name='[EarliestAllowableDay]' role='dimension' type='ordinal' />
+            <column caption='Fourth Available Day' datatype='date' name='[FourthAvailableDay]' role='dimension' type='ordinal' />
+            <column caption='Next Available Day' datatype='date' name='[NextAvailableDay]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='Second Available Day' datatype='date' name='[SecondAvailableDay]' role='dimension' type='ordinal' />
+            <column caption='Third Available Day' datatype='date' name='[ThirdAvailableDay]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_195343643662516231]' derivation='Attribute' name='[attr:Calculation_195343643662516231:nk]' pivot='key' type='nominal' />
+            <column-instance column='[EarliestAllowableDay]' derivation='Attribute' name='[attr:EarliestAllowableDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[FourthAvailableDay]' derivation='Attribute' name='[attr:FourthAvailableDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[NextAvailableDay]' derivation='Attribute' name='[attr:NextAvailableDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[SecondAvailableDay]' derivation='Attribute' name='[attr:SecondAvailableDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[ThirdAvailableDay]' derivation='Attribute' name='[attr:ThirdAvailableDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_1921066725523615744]' derivation='None' name='[none:Calculation_1921066725523615744:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CurrentTime]' derivation='None' name='[none:CurrentTime:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Difference From Current to 1st (copy)]' derivation='None' name='[none:Difference From Current to 1st (copy):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Difference From Current to 2nd (copy)]' derivation='None' name='[none:Difference From Current to 2nd (copy):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Difference From Current to 3rd (copy)]' derivation='None' name='[none:Difference From Current to 3rd (copy):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentTime:qk]' included-values='in-range'>
+            <min>#2019-07-08 10:19:00#</min>
+            <max>#2019-08-26 10:48:00#</max>
+          </filter>
+          <slices>
+            <column>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentTime:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#fefaf1' />
+            <format attr='vertical-align' value='top' />
+            <format attr='fill-above' id='refline3' value='#00000000' />
+            <format attr='fill-below' id='refline3' value='#fefaf1' />
+            <format attr='fill-above' id='refline6' value='#00000000' />
+            <format attr='fill-below' id='refline6' value='#00000000' />
+            <format attr='fill-above' id='refline2' value='#00000000' />
+            <format attr='fill-below' id='refline2' value='#fefaf1' />
+            <format attr='fill-above' id='refline5' value='#00000000' />
+            <format attr='fill-below' id='refline5' value='#fefaf1' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:EarliestAllowableDay:ok]' />
+            </encodings>
+            <reference-line axis-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_1921066725523615744:qk]' enable-instant-analytics='true' formula='average' id='refline0' label-type='value' probability='95' scope='per-table' value-column='[Parameters].[Parameter 1]' z-order='3' />
+            <reference-line axis-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Number of Records:qk]' enable-instant-analytics='true' formula='constant' id='refline1' label-type='automatic' scope='per-table' value='1' value-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Number of Records:qk]' z-order='1' />
+            <reference-line axis-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Difference From Current to 1st (copy):qk]' enable-instant-analytics='true' formula='average' id='refline2' label-type='computation' probability='95' scope='per-table' value-column='[Parameters].[Parameter 1]' z-order='4' />
+            <reference-line axis-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Difference From Current to 2nd (copy):qk]' enable-instant-analytics='true' formula='average' id='refline3' label-type='computation' probability='95' scope='per-table' value-column='[Parameters].[Parameter 1]' z-order='5' />
+            <reference-line axis-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Number of Records:qk]' enable-instant-analytics='true' formula='constant' id='refline4' label-type='automatic' scope='per-table' value='1' value-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Number of Records:qk]' z-order='2' />
+            <reference-line axis-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Difference From Current to 3rd (copy):qk]' enable-instant-analytics='true' formula='average' id='refline5' label-type='computation' probability='95' scope='per-table' value-column='[Parameters].[Parameter 1]' z-order='6' />
+            <reference-line axis-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Number of Records:qk]' enable-instant-analytics='true' formula='constant' id='refline6' label-type='automatic' scope='per-table' value='1' value-column='[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Number of Records:qk]' z-order='7' />
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_1921066725523615744:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:EarliestAllowableDay:ok]' />
+              <tooltip column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:NextAvailableDay:ok]' />
+            </encodings>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Difference From Current to 1st (copy):qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:EarliestAllowableDay:ok]' />
+              <tooltip column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:SecondAvailableDay:ok]' />
+              <tooltip column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:Calculation_195343643662516231:nk]' />
+            </encodings>
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Difference From Current to 2nd (copy):qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:EarliestAllowableDay:ok]' />
+              <tooltip column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:ThirdAvailableDay:ok]' />
+            </encodings>
+          </pane>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Difference From Current to 3rd (copy):qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:EarliestAllowableDay:ok]' />
+              <tooltip column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:FourthAvailableDay:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Number of Records:qk]</rows>
+        <cols>([federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_1921066725523615744:qk] + ([federated.05y82bk0su21p20zt8fgu04lem2s].[none:Difference From Current to 1st (copy):qk] + ([federated.05y82bk0su21p20zt8fgu04lem2s].[none:Difference From Current to 2nd (copy):qk] + [federated.05y82bk0su21p20zt8fgu04lem2s].[none:Difference From Current to 3rd (copy):qk])))</cols>
+      </table>
+      <simple-id uuid='{3BEB25F2-549C-4714-B811-F3363997A7FE}' />
+    </worksheet>
+    <worksheet name='U Shaped Phenomena of Permit Frequency (2)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SeattlePermitScheduler' name='federated.05y82bk0su21p20zt8fgu04lem2s' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05y82bk0su21p20zt8fgu04lem2s'>
+            <column caption='Difference From Current to 1st' datatype='integer' name='[Calculation_1921066725523615744]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF DATEDIFF(&apos;day&apos;,[CurrentTime], [NextAvailableDay])&gt; 1 THEN DATEDIFF(&apos;day&apos;,[CurrentTime], [NextAvailableDay]) ELSE NULL END' />
+            </column>
+            <column caption='True if Difference 1 or Less Days' datatype='boolean' name='[Calculation_195343643662516231]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_1921066725523615744] &lt;2 OR [Difference From Current to 1st (copy)] &lt;2 OR [Difference From Current to 2nd (copy)]&lt;2 OR [Difference From Current to 3rd (copy)]&lt;2 THEN TRUE ELSE FALSE END' />
+            </column>
+            <column caption='Current Time' datatype='datetime' name='[CurrentTime]' role='dimension' type='ordinal' />
+            <column caption='Difference From Current to 2nd' datatype='integer' name='[Difference From Current to 1st (copy)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,[CurrentTime], [SecondAvailableDay])' />
+            </column>
+            <column caption='Difference From Current to 3rd' datatype='integer' name='[Difference From Current to 2nd (copy)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,[CurrentTime], [ThirdAvailableDay])' />
+            </column>
+            <column caption='Difference From Current to 4th' datatype='integer' name='[Difference From Current to 3rd (copy)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,[CurrentTime], [FourthAvailableDay])' />
+            </column>
+            <column caption='Earliest Allowable Day' datatype='date' name='[EarliestAllowableDay]' role='dimension' type='ordinal' />
+            <column caption='Fourth Available Day' datatype='date' name='[FourthAvailableDay]' role='dimension' type='ordinal' />
+            <column caption='Next Available Day' datatype='date' name='[NextAvailableDay]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='Second Available Day' datatype='date' name='[SecondAvailableDay]' role='dimension' type='ordinal' />
+            <column caption='Third Available Day' datatype='date' name='[ThirdAvailableDay]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_195343643662516231]' derivation='Attribute' name='[attr:Calculation_195343643662516231:nk]' pivot='key' type='nominal' />
+            <column-instance column='[EarliestAllowableDay]' derivation='Attribute' name='[attr:EarliestAllowableDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[FourthAvailableDay]' derivation='Attribute' name='[attr:FourthAvailableDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[NextAvailableDay]' derivation='Attribute' name='[attr:NextAvailableDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[SecondAvailableDay]' derivation='Attribute' name='[attr:SecondAvailableDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[ThirdAvailableDay]' derivation='Attribute' name='[attr:ThirdAvailableDay:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[CurrentTime]' derivation='Day' name='[dy:CurrentTime:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[CurrentTime]' derivation='Hour' name='[hr:CurrentTime:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[CurrentTime]' derivation='Month' name='[mn:CurrentTime:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[CurrentTime]' derivation='None' name='[none:CurrentTime:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentTime:qk]' included-values='in-range'>
+            <min>#2019-07-08 10:19:00#</min>
+            <max>#2019-08-28 12:30:00#</max>
+          </filter>
+          <slices>
+            <column>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentTime:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#fefaf1' />
+            <format attr='vertical-align' value='top' />
+            <format attr='fill-above' id='refline3' value='#00000000' />
+            <format attr='fill-below' id='refline3' value='#fefaf1' />
+            <format attr='fill-above' id='refline6' value='#00000000' />
+            <format attr='fill-below' id='refline6' value='#00000000' />
+            <format attr='fill-above' id='refline2' value='#00000000' />
+            <format attr='fill-below' id='refline2' value='#fefaf1' />
+            <format attr='fill-above' id='refline5' value='#00000000' />
+            <format attr='fill-below' id='refline5' value='#fefaf1' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <encodings>
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:Calculation_195343643662516231:nk]' />
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:EarliestAllowableDay:ok]' />
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:FourthAvailableDay:ok]' />
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:NextAvailableDay:ok]' />
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:SecondAvailableDay:ok]' />
+              <lod column='[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:ThirdAvailableDay:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Number of Records:qk]</rows>
+        <cols>([federated.05y82bk0su21p20zt8fgu04lem2s].[mn:CurrentTime:ok] / ([federated.05y82bk0su21p20zt8fgu04lem2s].[dy:CurrentTime:ok] / [federated.05y82bk0su21p20zt8fgu04lem2s].[hr:CurrentTime:ok]))</cols>
+      </table>
+      <simple-id uuid='{0335EEB2-ED79-4779-9302-851E458E61A5}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='U Shaped Phenomena of Permit Frequency'>
+      <cards>
+        <edge name='left'>
+          <strip size='200'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='36'>
+            <card type='columns' />
+          </strip>
+          <strip size='34'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentTime:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card mode='type_in' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[hr:CurrentTime:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643662516231:nk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentScheduledDay:qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentTime:qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:WithinRange:nk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[tmi:CurrentTime:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[tsc:CurrentTime:qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:CurrentScheduledDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:CurrentTime:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:EarliestAllowableDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:FourthAvailableDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:NextAvailableDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:SecondAvailableDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:ThirdAvailableDay:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{DF4F9CEE-FD2B-4392-8E3A-E52632CC2160}' />
+    </window>
+    <window class='worksheet' name='U Shaped Phenomena of Permit Frequency (2)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='28'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='128'>
+            <card param='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentTime:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[hr:CurrentTime:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_1921066725523615744:qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643662516231:nk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentScheduledDay:qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentTime:qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Difference From Current to 1st (copy):qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Difference From Current to 2nd (copy):qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Difference From Current to 3rd (copy):qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:WithinRange:nk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[tmi:CurrentTime:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[tsc:CurrentTime:qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[tyr:Distance to Next Allowable Date (copy):qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:CurrentScheduledDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:CurrentTime:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:EarliestAllowableDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:FourthAvailableDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:NextAvailableDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:SecondAvailableDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:ThirdAvailableDay:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{06AD3C85-824F-4FF1-A9C7-6497050DED13}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Frequency of Next Allowable Date'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='28'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='128'>
+            <card param='[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentTime:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:NextAvailableDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643580661761:qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:CurrentTime:qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:WithinRange:nk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[tmi:CurrentTime:qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[tyr:Distance to Next Allowable Date (copy):qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:CurrentScheduledDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:CurrentTime:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:EarliestAllowableDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:SecondAvailableDay:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{63FEE9CC-13AC-4F74-9A51-282962F257D2}' />
+    </window>
+    <window class='worksheet' name='Frequency of Next Allowable Date (2)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='36'>
+            <card type='columns' />
+          </strip>
+          <strip size='36'>
+            <card type='rows' />
+          </strip>
+          <strip size='32'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643580661761:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Number of Records:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[avg:Calculation_195343643593953283:qk]</field>
+                  <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643580661761:qk]</field>
+                  <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Calculation_1921066725523615744:qk]</field>
+                  <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[sum:Number of Records:qk]</field>
+                  <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:CurrentScheduledDay:ok]</field>
+                  <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:Distance to Next Allowable Date (copy):qk]</field>
+                  <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:EarliestAllowableDay:ok]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>-77.908163265306129</value>
+                <value>3</value>
+                <value>588</value>
+                <value>196</value>
+                <value>#2019-08-01#</value>
+                <value>%many-values%</value>
+                <value>#2019-07-24#</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[attr:NextAvailableDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:Calculation_195343643580661761:qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[none:WithinRange:nk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[tyr:Distance to Next Allowable Date (copy):qk]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:CurrentScheduledDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:CurrentTime:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:EarliestAllowableDay:ok]</field>
+            <field>[federated.05y82bk0su21p20zt8fgu04lem2s].[yr:SecondAvailableDay:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{D0CFB37E-9A1B-4B93-9B65-B62484B29AF4}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Frequency of Next Allowable Date' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
+      AAAf90lEQVR4nO3deZCcaX3Y8e/7vn0f0z3dPafmvjQ6d1ewqz2NF3BhsDGGOOXgKjuO+cOJ
+      ndguVxxSlaMoO8bllGPjqthOnGAnYIPtYBYwBpZdQOyilVaLxK7u0dzTx3RP3/f1HvljYGCY
+      Y6WZHnW35vn8I72jft/3p+n+9XO8zyEZhmEgCIeU3OwABKGZGp4AmqY1+pKCcGBECSAcaiIB
+      hENNJIBwqIkEEA41kQDCoXZPCVDIJnn5wiUMTeX6pXOE0jXmb1/nypXL5Mr1g4pREA6M6V5e
+      7PL4CXSuISkmRoYHSQOGYuPYeC+pXAGnpQNd1xHP1oR2cU8JkEnECAaDdPoCrC0uk7cb9Fgq
+      3JpbZvzYaRRFAdj4sxUksiWWoxkmB/x0OK3NDkdoMVKjh0JomtYyCZArVvk3f/xlOl1OKvUq
+      //033oNJEc0e4fvuqQQ4SLFUgd/5vy+RyJbwdtj4jz//DANdnm1fOxtK8vufOo+uG/zbDz7J
+      8eGubV+XLVbQNPjVn36M3/ofX0HVdJEAwiYt8WkwDIPnL80TXMsR6HCxGi9w8WZ429dqus4X
+      vjXDkYCH8X4fL357Ycfr9vndnJoI8Nuf+DrvfmICq7k1SiahdbRECbC4mubz52cwgJV4BkmC
+      oe7tv/2/+ModXrq6AoBhwC/8+Okdr2tSZD78wacPImThAdESJUA0VaSu6kjS+vFbjvbx2LEj
+      2752KZoFYLDLC0CX13lfYhQeTC1RApyZ6uPJUwMkMiVMikKtvvOI0vc9fZRcqUqtrjHSN8xb
+      j/bdx0iFB82B9QLV63VMJhPS977W30Q4keOV6yEUWaLb6+DMxHrD1mKxoCjKXV8HoFqtYhgG
+      Vqt11/NUVcVk+v53gKZpSJKELO9cMOq6DrDra4T2oXzkIx/5SCMvaBgGkiRx7tw5PB4Puq6j
+      6zrVapVwOIzD4SCZTKKqKpFIBI/Hw8LCAh6XnQ6rQZ/PwYnRPq5du0o8HsdsNiNJEsFgkHK5
+      jGEYFItFCoUCdrudc+fO4XA4yGQyGIaBzWbj4sWLpNNpLBYLkUgEt9tNMpmkVqsRiUQolUoA
+      ZDIZLl++jM1mw+VycfXqVfL5PDabjZWVFVwuF6FQCMMw0DSNaDSKLMvUajWi0Si6rnPhwgXc
+      bjeJRIJisUgmk8FmsxEMBnE4HASDQQDOnz+P3+/HZrM18tct7NOBVIHy+TwWi4XFxUVsNhuS
+      JJHJZKjVauTzeex2O2azmdnZWQqFAn19fSwvLxMKhXC5XIwP9TM0NIRhGCSTSTKZDB6Ph7W1
+      NdLpNJFIBEVRePbZZ/H5fDidToLBIPF4nIcffhhVVdE0jfn5eer1OtVqlXw+TyAQwGKxkMlk
+      yOfz1Ot1Ojs76e7uxjAMMpkMuVwOTdMYGBjgxo0bOBwO0uk0hmHg9XpZWlrC7XZTr9cpFov4
+      /X68Xi/hcJhisYjH4yEUClGpVCgUCnR2dhKNRunq6qKjo+Mgft3CPjQ8ATRNIxwOMz4+TjQa
+      xeVyEY/HNz40TqeTzs5OFhcXsVgsSJLE3NwckiThdDrp7e2lUqmgaRqGYWyUKBaLBbvdjqZp
+      OJ1OvF4vtVoNVVVZW1sjkUhgs9moVqv4fD6mpqYIhUKkUik8Hg8OhwPDMLBYLNhsto2Za5qm
+      EQwGsVqt9PX1UalUyOVy3L59m46ODoLBID6fD4BIJILP50PXdZxOJ/l8nmq1SjQaxW63I0kS
+      iqLgdDqxWCw4HA6sVutGiZVIJHA6ndTrYtxUq2h4G+B7H967VSwWWVhYoLu7m56enkaGsmer
+      q6v09fVRr9fJZrMEAoGGXVtVVarVasOuJ+zPPZUAaq3M3PIq0xMjLMzewdoRwKHUWU0WOHp0
+      EkWCZGKNleUlAoEAhqGTTKZwu1243W4ikVXMZjODgwMsLCwCMDY2iiLrxFZDmGSdbDZHoVDA
+      7/chSRKJRBKXy4nH4yEcjmAymRgeHmJ+fv0B2OjoCOFwmFqtTn9/H/l8gXw+j8/XiaIoxOMJ
+      nE4HnZ2dhEJhFEVhdHSEubl5AEZGhlldXaVardHX10uxWCKXy6HWSpjNZtbW4qRTawT8foLB
+      ELIsMzY2unH+8PAQsViMSqVKT28PlXKFbDaL1+vBarUSi61hs9vo7upmZWVl4/88P7+AbugM
+      DQ4RT8Qpl8v0dHdTq9VIZzJ4OjzYHXai0Sg2q5Xe3l6WlpcBmJyYYGFhEU3XGBwYIJlKUSqV
+      6O7qQlVVUuk0He4OXC4nkdVVrBYL/f39LC4tATAxPs7S0jKqpjJw5AiZTIZCsUhXIICu6yRT
+      KdwuNx0dbsKRCBazmYGBARYW19+z8bExVlaC1NU6R/r7yeVy5AsFAn4/IJFIJnA5XXi9HkLh
+      8Pp7NjTE/ML6ezY2OkooFKZWr9Hf10ehUCCXz+Pz+VBkhXgijtPhwOfzEQyF1t+zkRHm5td/
+      50ODg6x8t221eyyQSCY3xWI2mRj6gVjuqQQol0osLC8xNtBNPC9RyScxgP6Am7zuotfvpFjI
+      Ui5m7yWvBKFp7qkEsDscyJKEhISuf7eOjoGmaxvdjSZFwWa1HEiwgtBo9zwculqpkqspSLUU
+      nkAPDrnOaqrAxLgLWQKzxYzN4jqoeAWhoRreCFbrZRQOtpejXFWRJQmrRQxuE/anJYZC3Ivl
+      WJ6Xr0XQdIP3nB2my2NvdkhCG2u7BJiLZHn6VD/Fcp2F1ZxIgF28dC3CJ1+Ywe0w8+sfeIjh
+      bnezQ2o5bTeg5cxEgFdurHJ9KcnJEV+zw2lpf3dulieP92FRTHzx4lKzw2lJbVcCdLpt/Nzb
+      p5odRls4EnBx8VaUQlnlmdO9zQ6nJbVlI1i4O9W6xuU7a7gcFk4O+5Dlux9Re1i0TAIYhkE4
+      UWQ5lufhiQBOm5lEtsz5G1FOjPiY6N9+hpgg7EfLtAHKNY2vvx7C32Hjy5fWH/n/xfO36PM5
+      +Ltzs+TLtSZHKDyIWiYBACSkzcW0AYosgSSBWGtLOAAtVQUKxgssx/I8MhHAZbewlinxreur
+      nBzxMzXgbWSYggDsNQEMg7paR1ZMyBjUNQOLeb1DSTSChXayp27QSiHNzOIqOuAy61RqKgMT
+      J+h0ikFwQnvZUwLIioKhaxSLFZzdPib6vaQKRTpsCrpuINbGFdrFnhLAZHXgsCnY3T2Y9RK3
+      F4JMHDuFoigYuoQYoia0i5ZpBAtCM7RUN6gg3G8tnQCxdIkvXVrmTijT7FCEB1RLJ8BHPnGJ
+      64spPvrpy6xlys0OR3gAtXQCJHMVnj7Zj0mWyZfEUAih8Vo6Af7le0/y3Pl5nj7Vx7gYDCcc
+      ANELJBxqLV0CCMJBEwkgHGoiAYRDTSSAcKjtKQEMQye0vEA8naNSyLK4Ej6QAXDhRIG//toM
+      1xaTjb+4ILDHBKiXMuTrJlaDSyyuhHGZasQypUbHxsc++wZdHgd/+fwtUrlKw68vCHsaDWog
+      U8mnkU0WFJNpfYuiWh1N0xo6HFo31hfbBQlVB/Xutx0QhLuypwRQzFYsZgWT3Y7XLrMQSnH0
+      2DSKIjV0OPTZ6W4+/pUbnBjxEfBYEat6CI22t/kAFjsnTp7cOO7ub1g8m7w2s8Yf/8oz/Nk/
+      XGMtU6a303EwNxIOrZbuBRrscvFXX5uhpup4xXRL4QC09FCIuqqxGM1zJODEaTMDkC1W+d1P
+      fZtoqsyH3n2Mt53efkd5QbgbW0qASjFHbC1Bqdz8XhezSWFqwLvx4Qe4MhvH67Tx6+9/iM+/
+      stjE6IQHwZYEuHz5NWZmb3Lt6rVmxPOmRns7mI9k+T9fvc30YGezwxHa3JYq0OyNK7xxY4aj
+      Dz/Fqamhe77g/RgNupYpkcxXmR7wbuxNJgh7sakEqBWSfP1bF/F4fWQz6WbF9Ka6vQ6ODXaK
+      D7+wb5tKAEPXCAWXKJbrBHr6CXR23PMFG10CaLpBta5htyjiAy803KbnAJKssLQwRyyRoCdT
+      4pnHzzQrLgA0Tedjz73BUjTPE8d7+OCzUyIJhIba0ggeGpmkxx+g0+dvRjybRNMlMoUaf/DL
+      T3H+elSsOCc03KYSIDx/nTduh3CYNFS9WSF9X7fXjt2i8J/+8lUemQwgvvyFRtvUBrj40lep
+      YQOgrMK73v4j256kVkvMzS+Rypfp9ztJ5ytMHj+Fy6o0vA1QV3VypRqdLqvY4kdouE0JUCrk
+      SGfzADjdXrwdzh1PrBVThFIqeiXHkW4PqYqJ3kAHmlpFMtSDj1wQGmBTFcjh6kCtlUkWVVy7
+      bslisBRcY/zoUeZvr7EULNEzMi0WxxXazpYHYedfPocuGSiKkyefeGyH0wxUVcNkMqFrKpWa
+      isO+XnUSy6II7WRTL5Cm1hnq7yW2GqdveHyX0yRMpvXCQ1ZMGx9+QWg3mxJgdfkOl6/dxmS2
+      kMvlmhWTINw3mxJgYPwEPR4rkgzlUvNHgwrCQduUAKH5G1yfC6JpOqVSsVkxbVhNFfnY37/B
+      x798k0pN9CwJjbelBHjq0Yeolgs43O5mxbThS68u0+tzoCgyV2bjzQ5HeABtmRNc0RW8bjuV
+      QvPbAPlynZlghkSuwttOHdDEY+FQ25IAHoeNjpOPMTjQ/KmGXR47j0338PpcnD6/mBAvNN6W
+      wXB2u4UL517gwpWbzYhnk3c/NkS5Uucnz45gs6znajRV4s//8QafeOE2papoFwj7s6UEyKQz
+      jE5OYXM0v2/f57bxjjODm372J1+4htNqJpYpYTUr/OyPTjYpOuFBsKUEkCUoV3WGBvqaEc+b
+      kmB9WLQYGi00wNZVIaoVyoUswXBs57MMg1h4hVA0QSGTZG5hGf0+fSB/9X2n6PLaODPVxU89
+      MXp/bio8sLZUgeq1Ok6ng3pt503paqUsc8urDI+NE15do8vnJJYq0utzgHGwX87dXgcfevfx
+      jWMxSUbYj00JsHLnKgvhBPW6yrG+nb9dda2Gr2eAQmoNSTFhsVgoqxq6rmMYBi0wl0YQ7sqm
+      BFBMJmw2Gzbb+qJUO7G6A1iiM0guLx6rwdJqlunpHhS5sYvjrmVKvDazxtSAl8kj3gZdVRC+
+      b1MC9AxO8LbOHpbmZ9ltxURJkhmfOrZx7O85mOBeuBzknWcGefFKiIGAC7t1T2v5CsKONn2i
+      7rx+nstzCWRF4mfe/9ZmxbTBYlYIxQtouo4ipkMKB2BTL9Dk6bMcH+tH0WrMLoWbFdOG9z4+
+      gskk81NPjGIxi3lmQuPtsDr0+i4ve1mD56BnhOVLNS7eijHa62a83yPWCRL2ZVMJoNerfPOb
+      X2c1EuK1K280K6Zd/dFn3+BOKMMf/v0bxNLlZocjtLkfmhJZpVgoEQzHGBufaFZMu0rlKpw9
+      1kOHw0KmWG12OEKb25QAZnsHwwE7X3n+RZL51pwR9p9//lFW1vL83DumODogukaF/dnSBrhz
+      4wqStYNyzeD08XsfaCZWhRDayZaO9Xgqiy7nMMli/L3w4NtUBTIMg7HhQZJrKfpHWrMNIAiN
+      tCkBwgu3ePXKNRZnb/GdG3d2OU0nGg4RjSepV0vE4qkDDlMQDsamBJDQKZerPPH2n+TZs6d2
+      PEmvlViOrGGz2ZifX6SWTxDPtmajWRB2s6kNYLG7GBkZxqiXSGbyeNzbL44rmexMjA6wODeP
+      02nH7/eSrlTQXGZ03TjQIcrnroZ57uU5Rno7+LX3P4Qit/RWx0KL25QAXf0jeH0Bbt5Z4khf
+      944naVqNeCyO1enCaTWYXY4ydewEiiIf+OK4n/76DP/qJ0/yqW/McmslycPjXQd4N+FBt6UX
+      6OKFVxgcGePiq1d421PbD4gzme1MnzixcXw/148YCDj5/CuLpPMVeryip0rYny3PAeZvvs7s
+      8ipjxx9harj3ni940M8BipU6r88nGAi4GOp2ibFAwr5sHgukqaSKFZ544izFdGuuxOa0mXnq
+      RB/DPW7x4Rf2bVMVSK3kCYUilMoqx08/3KyYBOG+2VIFyqdiJIsaPo+Hjl22SNqJGAohtJMt
+      jeCrN26hSwaRXXeIEYQHw5ZO9P5uP+lkGl/v4HavF9qIYRgUynXypdquc7wPsy0JEF5L8Pa3
+      P0tiNdSMeIQGiiSLPHd+gS9cWGIplm92OC1pSxXo2MQoX33xm5x95tn7GkilpvLFi0uomsG7
+      Hh2i02W9r/d/EAXjBc5MdGExyays5Rnt7Wh2SC1nSwlw89YtAn4f5eL93SHm+lKKySNenjje
+      y+U7a/f13g+qh8YCzITSXF1M8pZJ8cR8O1tKALMiE0km6egeuK+BjPS4+eLFJUyKzBPHd34A
+      ZxgGurG+iK94DrA7u9XEB57ebbdPYUsCBALdhGIzqOruCxxm42GWkzX8dp1EtsTUsRPYzXsf
+      mBbw2Plnz06i6wYOm3nH133m5Xn+3zfnGe5x8dv//KxYLEvYl637A5TreDpslPOZHU/S1Sqx
+      TAkzUKrC5HAvqVSO3oB7X6NBTYoJFFC1nV/z5UsrfPSXnuR/f+kGN5bTYjCcsC+bEsAwDDq9
+      XsZHhllN7rxHWK1SolqpEFnLMNTbSSKZwu4fRlGUAx8NenrMx3/7zBU0XWesz80uS5gKwpva
+      9CS4mk/wl3/9dwwMDDFx4gzTo7tsTGcYlKtVTJJBKl+mJ+ADDv5JsKbpLK8V8HfY8DgtB3Yf
+      4XDYOhp0bpb0WgjZM8SZE/fegBJDIYR2sqXVGg8vkKlboF5qRjyb6IZBplClVt+lUSAI+/BD
+      G2S8QRULidUgXv9bmhXThr/9xiyv3o7hspv58M+ewe0QVR6hsTaVAEOTJ3FbzfQPjXN6uvn9
+      x994I8x/+Lm3YjWbmA1nAfjkizP8u//1Cs9fXmlydK0vU6jy+397mY9++tvEs2Id1e1sSoDr
+      ly/iHZrm9EQvr1251qyYNvzYWwb57b96jbqmMTXgZTmW48UrIX76iTH+/Is3UDWxGdNuvnBh
+      Eb/bzmDAzWe/tdDscFrS5gkxapVLL70IgK9/pBnxbPIzz4zz7keHsVoUzIpMpba+Mfb5G1E6
+      3VbxJPhNdHvtfOP1CCZF4q1Hd17k4DDbYX+AvTvoXqCZYJrZcJZHJro4Erj3CTuHiaYbvHo7
+      iq7D48d6MCliCZkf1nYJIAiNJL4ShENNJIBwqO0pAQxDZ2Vxjng6R7WUZzm0KnZsF9rSntoA
+      uqZSrdWYmZnDalHwd9gxnL30dDpEG0BoK3saTC8rJtLxFVDMKCYTTpeLTK2OpmkHvjiuIDTS
+      nhJArZfJ5stYrXY6HDLzoThHp4+jKNKBD4cWhEYS3aDCoSZ6gYRDTSSAcKiJBBAONZEAwqEm
+      EkA41NpuUZ1yVWU1VWQ5lsfrsvLQWABZFsOihb1pqwRQNZ3nzi/w0tUIpaqKhMTP/9gU7zwj
+      VrIW9qatEqCu6kiALEsEOmyYFYWVNbHqsbB3bdUGsFkUjo/4ODXqR9UNrFaF9z4+2uywhDYm
+      ngQLh9qeqkC6VmdudhbZ5qbTJrOaKjA9PYVJNEaFNrOnEsAwDDS1yq2ZJawWmf6uDrKqg16f
+      E12tIqEeRKyC0HB7KgEMrc7MnQWOTk+zODtDrVZDNrmRZRlDktqrYSEcanurAukqGDrBUIQj
+      /d1Ek0XGRp1IEiCBqAgJ7UI0goVDTdRWhENNJIBwqLVlAlRqKhduRlmK5sQG0MK+tGUCvHA5
+      iMtu5uKtGKl8tdnhCG2sLRPAAEyyhCQhSgBhX9qyF6hcVbk8u0afz8lYX4dYJXoHlZrKc+cX
+      0HSD9z81hnOX7WcPq7ZMAOHufO78AuFEEatZwWk38cFnp5odUstpyyqQcHdMiky5qlKsqGJp
+      9B201XwA4d6869EhZBk0Dd71VjFpaDt7rgJp9RooZtBVKjUVp8MOiCqQ0F72tjq0pnL7jQtE
+      snXm78wQXJwlVajtOxhdN1A1XfTsNJCm6WIvtV3sqQokKSaGBwdIA7LZxmC3h1SxhGZX9rw4
+      bqZQ5Xc/9RrJXIV/8sw4P3FWzPTar9lwhv/6t5fRDYPf/JlHODHsb3ZILWdPCaCpVRZXwpRs
+      0GPXmFkIM3n8FIqi7Hlx3Mt3YnS6rHzox4/zsede531PigTYr29dj/Cex0awWRReuhrmoTGR
+      AD9sTwmgmKycevRHGhrIyVEff/+tef70H67x+HTPjq/TdYOaqmE1K6L//008NO7nT79wHVmS
+      +MV3TTc7nJbUMr1ARwIu/uCXnyJXrNHv3373R103+OSLtwklijw0FuAnzg6LJNhFuaqiajqS
+      JNHlsTU7nJbUUp3DHQ4LA12uHRe6yhSrpPI1PvyzZ/jOfEJsxPEmnv92kF945zRvO9XPN69G
+      mh1OS2qZEuBueJwWXHYTf/iZ1zkx1In48t/djz7Uz9984w4g8RsfON3scFpS2w2F0HSdUlXF
+      ZTOL6s+bMAyDdKGKIst4nJZmh9OS2i4BBKGR2qoKdK/WMiWKZRWLWeZIwNXscIQW9MAmwNWF
+      BL/z19+mrurIksS/+PFpsYyisEXL9ALlSjV+79OX+cgnLhFJFrd9jWEYfOKF2/zan7zMV15b
+      3nXIxM2VNLW6jtdhRdcNLt1eO6jQhTbWMgnwwuUgg10unjjWy+fOL2z7mlC8wIWbMf71T53i
+      ky/eQdN3ToDHp3vodFvJlKpYrCbe/djwQYUutLGWqQIN97j4m2/MYbeaePzY9k+CO5wWDMPg
+      ufML9HTakXfpBRrp7eDjv/ksugGShBgPL2xr371Aa+FlYukiR48dw6JIe+4FMgyDO6EMVVXn
+      xLAPZYeHYdFUkTvhLA+N+fE4rfsJXRD2nwCzd2bp7+4gU7PR63dRr5XQ1Qr6d6sniixjYGwc
+      y7IMm47XP+j3ciwhoen63R1LEpL0Q8eyhKZtfyxJEvI2x7qmY+x2rOsY3y1tZFnew7GBYRjr
+      G4AoOx8DKNscG7qBvtOxLGMYP3T8A+/Bmx3v7T1b/50cxHv2g/Yby76rQJpap1QsYXK410eD
+      mkwoJvHNLLSHfVeMR4aPUNStdHsdjYhHEO4r8SRYONRE14hwqIkEEA41kQDCoXYgD8LERBWh
+      XTS8Ebzev739JQ3D2DKGf7uf7fRzXde/2yf95g7iXvdy/n7vfxDn38977fReHcT99/NeNbwE
+      uNsP6F6sP3S6P7W2+3Uvw1h/oPWg3atd3quGlwCC0E5auhEcCoU3/p6MxagbBmqtzNXrNwGD
+      hTs3mV8O73yBu2TU84Rj2Y3jaDQGQD4dZ3ZhBaOa4/J3rhFLZPZ9L72aJ7KW23KvWHiZ69dv
+      UCwWuHb1DdbS+X3fKx4Ks7F9iF4nGksCOvMzt7g1u0AsssKtW7coVve/r/NaKMzG2oB6jeha
+      CtCZvX2T27OLpOOrXL12g2oDVqlbuHV9138PL90hninf1bVaZjTodpKJJKqmYjKgUq3g6OrG
+      hIxJAdQ8qsmPUs2hwZ4W4/oeQ62QXI2vP74rZyiXy/T29mC2u9FiCcp5CQ2JRszC19USqWiS
+      mjEA5fTGvbr6BqmUZ5ibXebo6dOszM3R3ene172yiSRJQ2Oyx09wNUW5qtHb42NkbJwbt2fJ
+      6+sL5+42qvae7qWpHO33sxJJU67q9Hb78HrchBMF1tIqJyd7WAhnmBjy7fk+er1IRTaTr2mk
+      VoPrm6UYKsl4lCPHn8ZNhmy+iN1Spctrf9PrtWYJYBjomookK5RKJXLZLN/73jBbrOtvmKSg
+      1SrUNXVf+xIbhk6tuj5noFiukst9/5vXZltfS0dx+nnk5FFikdA+7vSD91K23Cu0NIera5Ae
+      r5ViqcJ+vyh1XacugVYuU6uVKZa+VxYYzNyeYWp6mr6BESYHOlleTe/7XqoEaqVMvVamWP5u
+      WaBrOL1dSLUydU2lVKqgmPf3nZuIhMlli4RDUcrlEtlsjlJNZ7DbQ1WHRDxBtVoinkjd1fVa
+      tAQwWFlaZHRyklIqSqEKXQEvFgkKmQT1ukokWcHnlsDWt68s1msVluM1Jo+Os7ywgK2nd2Mn
+      lWhomXpdpVStE19ZYWRsfF//K61WJpRSGZ+cYGl+HvsP3Ask1iIhhkdHWQ0uMzSyv+mb+XQC
+      Z1cvvV47y5EofX2960PMdRVJkllZDtIbcBGKl5kY69vXvXLpOK7uXro9NlYiMfp7e9cbpRLE
+      wiv4+gbW/y2aYnxsf6WazdvD2aFJcrk82VQZh9uHRSty9XaQk8+cIjAyQW//Ecrq3dUJRCNY
+      aHuVUoF8WaXL773nc0UCCIdaa7YBBOE+EQkg7INOPl/AMAzyuTzVSmVj1tndMgydXC6PAai1
+      Ktlc4Z6H0hiGTjqVIpVKU66U2WWtBOZuXiUST5PNZKipWqs2goX2kOUPPvo/+a1//0v8l9/7
+      Mz7wnmcZOnmcbDyOr+sIhlpDMjSuvPIC/qmnGOmUydbNjA/1k0uuEsnUIHmbF28U+ZVffB9f
+      +fI/MnX8YYqlIp0OE7mKRqVcBUkGxcClGKQqEk4zpPMViqEbZFxjvOPRaWYvPU/IdpwBS5r+
+      kWkyqQQOhx2b249SzVA0bIwO9BKNZznd08VSKMn84pJIAGF/Jo74uHD5JsMjw+TTGRZvfwdr
+      5yg3z7+CSZZR6mUcThcjQ0f4wqf/ApfHz8DA+/n6y68x6JGp25w8+cwZ0EroZg9Tk2N87vOf
+      45FhD68HC1RNAezZRfrPnOVr576Ky+NHBexWC1NdTrzjYyiKmYEj/RiOIapzi9y4/ArjR6e5
+      Hiqj5L5GJJLG6fUx8k/fD4Crw8vqhVc5dfKESABhP2RGT5xieTXC2EAAh82O3W7H7Xbicrko
+      Jlep6CZGhrtZWFymr6ebnpEpTJKCv8NKtFBnutdJxawgm5x0mGu8duUqHQ4Ls6E4TmeAiYlj
+      ZGaKHJscIz7Tg39ggkQ8hkkGf08P12bnmOh6CJPVjs0sIzucSBZwu910lnSQOjFUid7R6Y3n
+      RYvXL5HWHOhYRS+QcLhcevkcA9MP09+13mUqEkA41P4/fGXjezrD7PAAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Frequency of Next Allowable Date (2)' width='192'>
+      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
+      iBFAcE/z/wEbXKUckf/VxgAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='U Shaped Phenomena of Permit Frequency' width='192'>
+      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
+      rkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='U Shaped Phenomena of Permit Frequency (2)' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

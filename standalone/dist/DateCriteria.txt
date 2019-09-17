@@ -1,0 +1,3 @@
+Project_Url = https://cosaccela.seattle.gov/Portal/Cap/CapDetail.aspx?Module=DPDPermits&TabName=DPDPermits&capID1=19DPD&capID2=00000&capID3=93039&agencyCode=SEATTLE | (URL);
+Earliest_Allowable_Day = 09-10-2019 | (FORMAT mm-dd-YYYY); 
+Check_Frequency = 0.5 | (MINUTES);
